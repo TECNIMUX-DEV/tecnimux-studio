@@ -396,6 +396,7 @@ header {
 
 
 #landing-page {
+    padding-top: 2rem;
 
     & h1 {
         font-size: 2.5rem;
@@ -454,7 +455,7 @@ header {
     position: fixed;
     min-height: 100%;
     min-width: 100%;
-    background-color: rgba(14, 14, 14, 0.479);
+    background-color: rgb(14 14 14 / 97%);
     backdrop-filter: blur(24px);
     border: 1px solid var(--primary);
     padding: 50px;
@@ -938,7 +939,6 @@ footer {
         & div {
             display: flex;
             align-items: center;
-            border: 1px solid var(--primary);
             padding: .3rem .5rem .1rem .5rem;
             border-radius: 16px;
             background-color: #242424;
@@ -966,6 +966,54 @@ footer {
             width: 18px;
 
             }
+    }
+
+    & #chat {
+        position: fixed;
+        height: 40px;
+        max-height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        bottom: 50px;
+        right: 10px;
+        border: 1px solid var(--primary);
+        border-radius: 45px;
+        padding-left: 3rem;
+
+            & svg {
+                position: absolute;
+                height: auto;
+                width: 50px;
+                left: -5px;
+                background-color: #242424;
+                border: 1px solid var(--primary);
+                border-radius: 50%;
+                padding: .6rem;
+            }
+
+            & p {
+                font-size: 1.2rem;
+                color: rgb(255, 255, 255, .78);
+                padding: .8rem .6rem 0 .5rem
+            }
+        }
+    }
+
+    & #by-tx {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: fit-content;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 5px;
+        padding: 0 1rem;
+
+        & p {
+            font-size: .8rem;
+        }
     }
 
     & .social {
@@ -1003,7 +1051,6 @@ footer {
             }
         }
     }
-}
 
 #acc {
     z-index: 20;
@@ -1021,16 +1068,17 @@ footer {
     display: none;
     z-index: 20;
     position: fixed;
-    right: 30px;
+    right: 15px;
     bottom: 120px;
-    background-color: var(--primary);
-    border-radius: 6px;
-    border: 1px solid #292929;
     cursor: pointer;
   
     & svg {
+      height: auto;
+      width: 40px;
+      padding: .5rem;
+      stroke: var(--primary);
+      fill: var(--primary);
       transition: all .2s linear;
-      margin: 10px;
     }
   
     &:hover {
@@ -1162,9 +1210,12 @@ footer {
         width: 100%;
     }
 
-    & .by {
+    & #chat {
+        padding: 0;
+        background-color: transparent;
+        border: none !important;
 
-        & h4 {
+        & p {
             display: none;
         }
     }

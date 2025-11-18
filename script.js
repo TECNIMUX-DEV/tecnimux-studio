@@ -118,3 +118,156 @@ btnCloseMenuAcc.addEventListener('click', () => {
 })
 
 // document.body.style.cursor = "url('/icons/CURSOR/CURSOR.png') 16 16, auto";
+
+
+
+// TEMP
+        // Image data - Replace with your own images
+        const images = [
+            {
+                id: 1,
+                url: 'https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=1600&h=900&fit=crop',
+                title: 'Modern Architecture',
+                description: 'Contemporary building design with clean lines',
+            },
+            {
+                id: 2,
+                url: 'https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=1600&h=900&fit=crop',
+                title: 'Urban Landscape',
+                description: 'Vibrant cityscape at golden hour',
+            },
+            {
+                id: 3,
+                url: 'https://images.unsplash.com/photo-1618172193622-ae2d025f4032?w=1600&h=900&fit=crop',
+                title: 'Nature & Design',
+                description: 'Where architecture meets natural beauty',
+            },
+            {
+                id: 4,
+                url: 'https://images.unsplash.com/photo-1618556450991-2f1af64e8191?w=1600&h=900&fit=crop',
+                title: 'Minimalist Spaces',
+                description: 'Clean and modern interior design',
+            },
+            {
+                id: 5,
+                url: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1600&h=900&fit=crop',
+                title: 'Creative Workspace',
+                description: 'Inspiring environments for productivity',
+            },
+        ];
+
+        let activeIndex = 0;
+        let isTransitioning = false;
+
+        // Initialize carousel
+        function init() {
+            renderTabs();
+            renderCarousel();
+            renderDots();
+            updateCounter();
+            attachEventListeners();
+        }
+
+        function renderTabs() {
+            const tabsContainer = document.getElementById('tabs');
+            tabsContainer.innerHTML = images.map((image, index) => `
+                <button class="tab ${index === activeIndex ? 'active' : ''}" data-index="${index}">
+                    ${image.title}
+                </button>
+            `).join('');
+        }
+
+        function renderCarousel() {
+            const carouselInner = document.getElementById('carouselInner');
+            carouselInner.innerHTML = images.map((image, index) => `
+                <div class="carousel-item ${index === activeIndex ? 'active' : ''}">
+                    <img src="${image.url}" alt="${image.title}">
+                    <div class="carousel-overlay"></div>
+                    <div class="carousel-content">
+                        <h3>${image.title}</h3>
+                        ${image.description ? `<p>${image.description}</p>` : ''}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderDots() {
+            const dotsContainer = document.getElementById('dots');
+            dotsContainer.innerHTML = images.map((_, index) => `
+                <button class="dot ${index === activeIndex ? 'active' : ''}" data-index="${index}" aria-label="Go to image ${index + 1}"></button>
+            `).join('');
+        }
+
+        function updateCounter() {
+            const counter = document.getElementById('counter');
+            counter.textContent = `${activeIndex + 1} / ${images.length}`;
+        }
+
+        function goToSlide(index) {
+            if (isTransitioning || index === activeIndex) return;
+            
+            isTransitioning = true;
+            
+            // Remove active class from current items
+            document.querySelectorAll('.carousel-item.active, .tab.active, .dot.active').forEach(el => {
+                el.classList.remove('active');
+            });
+            
+            // Update active index
+            activeIndex = index;
+            
+            // Add active class to new items
+            document.querySelectorAll('.carousel-item')[activeIndex].classList.add('active');
+            document.querySelectorAll('.tab')[activeIndex].classList.add('active');
+            document.querySelectorAll('.dot')[activeIndex].classList.add('active');
+            
+            updateCounter();
+            
+            setTimeout(() => {
+                isTransitioning = false;
+            }, 300);
+        }
+
+        function nextSlide() {
+            const nextIndex = (activeIndex + 1) % images.length;
+            goToSlide(nextIndex);
+        }
+
+        function prevSlide() {
+            const prevIndex = (activeIndex - 1 + images.length) % images.length;
+            goToSlide(prevIndex);
+        }
+
+        function attachEventListeners() {
+            // Navigation buttons
+            document.getElementById('prevBtn').addEventListener('click', prevSlide);
+            document.getElementById('nextBtn').addEventListener('click', nextSlide);
+            
+            // Tabs
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.addEventListener('click', (e) => {
+                    const index = parseInt(e.target.dataset.index);
+                    goToSlide(index);
+                });
+            });
+            
+            // Dots
+            document.querySelectorAll('.dot').forEach(dot => {
+                dot.addEventListener('click', (e) => {
+                    const index = parseInt(e.target.dataset.index);
+                    goToSlide(index);
+                });
+            });
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') {
+                    prevSlide();
+                } else if (e.key === 'ArrowRight') {
+                    nextSlide();
+                }
+            });
+        }
+
+        // Initialize on page load
+        init();
