@@ -88,22 +88,27 @@ header {
         list-style: none;
 
         & li {
-            padding: 10px;
             color: var(--black);
-            border-radius: 5px;
+            border-radius: 12px;
             font-weight: bold; 
             cursor: pointer;
             opacity: .8;
 
+            & a {
+                color: var(--black);
+                padding: 10px;
+                text-decoration: none;
+            }
+
             &:hover {
                 background-color: #adadad11; 
-                outline: 1px solid var(--black);
+                outline: 2px solid var(--black);
                 opacity: 1;
               }
         }
     }
 
-#pro {
+.pro {
     position: relative;
     background-color: transparent;
     font-size: 15px;
@@ -116,12 +121,9 @@ header {
     text-transform: uppercase;
     cursor: pointer;
     overflow: hidden;
-    border: 1px solid #000000c5;
-    /* transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1); */
-    background-color: var(--primary);
+    border: 2px solid #000000c5;
+    background: linear-gradient(45deg, var(--primary) 0%, red 90%);
     color: var(--white);
-    box-shadow: 0 0 #0000 inset;
-    /* border: 1.5px solid var(--primary); */
 
   
   &::before {
@@ -140,48 +142,58 @@ header {
     /* transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1); */
     font-size: 15px;
     font-weight: 600;
-}
+    }
   
   
-  &::after {
-    content: "Agendar";
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* background-color: #333; */
-    background-color: transparent;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    transform-origin: top;
-    transform: translate(0%,-100%);
-    /* transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1); */
-  }
-  
-  &:hover::before {
-    transform: translate(0%,0%);
-  }
-  
-  &:hover::after {
-    transform: translate(0%,-200%);
-  }
-  
-  &:focus {
-    outline: none;
-  }
-  
-  &.active {
-    scale: 0.95;
-  }
+    &::after {
+        content: "Hacer un pedido";
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* background-color: #333; */
+        background-color: transparent;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        transform-origin: top;
+        transform: translate(0%,-100%);
+    }
+    
+        &:hover::before {
+            transform: translate(0%,0%);
+        }
+        
+        &:hover::after {
+            transform: translate(0%,-200%);
+        }
+        
+        &:focus {
+            outline: none;
+        }
+        
+        &.active {
+            scale: 0.95;
+        }
 
-  &:hover {
-    color: var(--white);
-    background-color: #d881a8;
-    background-color: var(--primary);
-    box-shadow: 0 0 100px #00000026 inset;
-    border-width: 1px;
-    transition: 0s all;
-  }
+        &:hover {
+            color: var(--white);
+            background-color: #d881a8;
+            background-color: var(--primary);
+            box-shadow: 0 0 100px #00000026 inset;
+            border-width: 1px;
+            transition: 0s all;
+        }
+    }
+
+    #pro2 {
+        display: inline-block;
+        height: auto;
+        width: auto;
+        padding: 0 10px;
+        transform: translate(0%, 100%);
+        border: 2px solid #000000c5;
+        background: linear-gradient(45deg, var(--primary) 0%, red 90%);
+        color: var(--white);
     }
 
     #home {
@@ -291,6 +303,9 @@ header {
 /* Button menu */
 /* From Uiverse.io by Cevorob */ 
 #menu-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
 }
 
@@ -399,7 +414,7 @@ header {
     padding-top: 2rem;
 
     & h1 {
-        font-size: 2.5rem;
+        font-size: 3.5rem;
         font-weight:bold;
         font-family: "Inter", sans-serif;
         text-align: center;
@@ -908,66 +923,6 @@ footer {
         border-radius: 50%;
     }
 
-    & .by {
-        position: fixed;
-        bottom: 0;
-        right: 0;
-        width: fit-content;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        flex-direction: column;
-        gap: 5px;
-        padding: .5rem .5rem 0 .5rem;
-        color: var(--black);
-        border-radius: 15px;
-
-        & p {
-            font-size: 1rem;
-            font-weight: bold;
-            color: rgb(63, 63, 63);
-            text-shadow: none;
-        }
-
-        & svg {
-            height: auto;
-            width: 40px;
-            padding: .2rem;
-            color: #fff;
-        }
-
-        & div {
-            display: flex;
-            align-items: center;
-            padding: .3rem .5rem .1rem .5rem;
-            border-radius: 16px;
-            background-color: #242424;
-            cursor: pointer;
-
-            &:last-child {
-                display: flex;
-                flex-direction: row;
-                gap: .2rem;
-                border: none;
-                background-color: transparent;
-                cursor: default;
-            }
-        }
-
-        & h4 {
-            font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.781);
-            padding: .4rem .6rem 0 .5rem
-        }
-
-        & img {
-            display: block;
-            height: 18px;
-            width: 18px;
-
-            }
-    }
-
     & #chat {
         position: fixed;
         height: 40px;
@@ -977,8 +932,7 @@ footer {
         align-items: center;
         bottom: 50px;
         right: 10px;
-        border: 1px solid var(--primary);
-        border-radius: 45px;
+        background-color: transparent;
         padding-left: 3rem;
 
             & svg {
@@ -1008,11 +962,17 @@ footer {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 5px;
+        gap: 1px;
         padding: 0 1rem;
 
-        & p {
-            font-size: .8rem;
+        & img {
+            height: auto;
+            width: 8px;
+        }
+
+        & h2 {
+            color: gray;
+            font-size: .5rem;
         }
     }
 
@@ -1121,7 +1081,7 @@ footer {
             flex-direction: column;
         }
 
-        & #pro {
+        & .pro {
             height: 40px;
             width: 140px;
             display: none;
@@ -1137,6 +1097,7 @@ footer {
     }
 
     #landing-page {
+        padding-top: 3rem;
 
         & h1 {
             padding: 2rem 0;
@@ -1245,10 +1206,53 @@ footer {
     
 }
 
+.whatsapp-btn {
+    position: fixed;
+    bottom: 22px;
+    right: 22px;
+    width: 65px;
+    height: 65px;
+    background-color: #25D366; /* color oficial WhatsApp */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    z-index: 9999;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.09);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.30);
+}
+
+.whatsapp-btn svg {
+    width: 35px;
+    height: 35px;
+    fill: white;
+}
+
+/* RESPONSIVE: ajustar tamaño en móviles */
+@media (max-width: 600px) {
+    .whatsapp-btn {
+        width: 55px;
+        height: 55px;
+        bottom: 18px;
+        right: 18px;
+    }
+
+    .whatsapp-btn svg {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+
 
 /* Scrollbar para navegadores basados en WebKit (Chrome, Edge, Safari, etc.) */
 ::-webkit-scrollbar {
-    width: 8px; /* Grosor del scroll */
+    width: 12px; /* Grosor del scroll */
   }
   
   ::-webkit-scrollbar-track {
@@ -1267,7 +1271,7 @@ footer {
   
   /* Scrollbar para Firefox */
   * {
-    scrollbar-width: thin; /* "thin" hace que el scroll sea delgado */
+    scrollbar-width: 8px; /* "thin" hace que el scroll sea delgado */
     scrollbar-color: #262626 #f0f0f0; /* (color del thumb) (color del track) */
   }
 
@@ -1277,6 +1281,7 @@ footer {
 .gallery-container {
     max-width: 1400px;
     margin: 0 auto;
+    padding: 1rem;
 }
 
 /* Header */
@@ -1508,9 +1513,6 @@ footer {
 }
 
 @media (max-width: 768px) {
-    body {
-        padding: 1rem;
-    }
 
     .gallery-header h1 {
         font-size: 2rem;
@@ -1776,9 +1778,6 @@ footer {
         }
 
         @media (max-width: 768px) {
-            body {
-                padding: 1rem;
-            }
 
             .header h1 {
                 font-size: 2rem;

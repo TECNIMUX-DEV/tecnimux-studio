@@ -12,7 +12,7 @@ btnMenu.addEventListener('click', () => {
         btnMenu.style.position = "fixed";
         header.style.position = "fixed";
         header.style.height = "100vh";
-        document.body.style.overflowY = 'hidden';
+        // document.body.style.overflowY = 'hidden';
 
     } else {
         menuMain.style.display = "none";
