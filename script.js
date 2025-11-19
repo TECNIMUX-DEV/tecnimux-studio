@@ -119,41 +119,176 @@ btnCloseMenuAcc.addEventListener('click', () => {
 
 // document.body.style.cursor = "url('/icons/CURSOR/CURSOR.png') 16 16, auto";
 
-
-
 // TEMP
+// New images array
+const galleryItems = [
+    {
+        id: 1,
+        url: 'https://res.cloudinary.com/dxwfpc5fu/image/upload/v1763510816/CONCJBO2_fzsqtl.webp',
+        title: 'Portfolio Grid',
+        description: 'A collection of creative projects',
+        size: 'large'
+    },
+    {
+        id: 3,
+        url: 'https://res.cloudinary.com/dxwfpc5fu/image/upload/v1741884404/TECNIMUX-OG.png',
+        title: 'Open Graph',
+        description: 'Cityscape at golden hour',
+        size: 'tall'
+    },
+    {
+        id: 2,
+        url: 'https://res.cloudinary.com/dxwfpc5fu/image/upload/v1763510111/LALAU_tobxlb.png',
+        title: 'Modern Architecture',
+        description: 'Contemporary building design',
+        size: 'normal'
+    },
+    {
+        id: 4,
+        url: 'https://res.cloudinary.com/dxwfpc5fu/image/upload/v1763510607/CONCJBO_gqnbf0.webp',
+        title: 'Nature & Design',
+        description: 'Architecture meets beauty',
+        size: 'wide'
+    },
+    {
+        id: 5,
+        url: 'https://res.cloudinary.com/dxwfpc5fu/image/upload/v1763510111/Calculator-OG_kmao9m.png',
+        title: 'Minimalist Spaces',
+        description: 'Modern interior design',
+        size: 'normal'
+    },
+    {
+        id: 6,
+        url: 'https://res.cloudinary.com/dxwfpc5fu/image/upload/v1763516478/J-v23_kalehm.png',
+        title: 'Nature & Design',
+        description: 'Architecture meets beauty',
+        size: 'normal'
+    },
+    {
+        id: 7,
+        url: 'https://res.cloudinary.com/dxwfpc5fu/image/upload/v1763510111/BEDOYA_nlmoqx.png',
+        title: 'Nature & Design',
+        description: 'Architecture meets beauty',
+        size: 'normal'
+    },
+    {
+        id: 8,
+        url: 'https://res.cloudinary.com/dxwfpc5fu/image/upload/v1763517794/1_pr68gp.png',
+        title: 'Nature & Design',
+        description: 'Architecture meets beauty',
+        size: 'tall'
+    },
+    {
+        id: 9,
+        url: 'https://res.cloudinary.com/dxwfpc5fu/image/upload/v1763517793/2_zfkzqg.png',
+        title: 'Nature & Design',
+        description: 'Architecture meets beauty',
+        size: 'tall'
+    }
+];
+
+let currentIndex = 0;
+
+// Initialize gallery
+function initGallery() {
+    renderGallery();
+    setupEvents();
+}
+
+function renderGallery() {
+    const grid = document.getElementById("galleryGrid");
+
+    grid.innerHTML = galleryItems.map((item, i) => `
+        <div class="gallery-card ${item.size}" data-index="${i}">
+            <img src="${item.url}" alt="">
+            <div class="card-overlay">
+                <div>
+                    <h3>${item.title}</h3>
+                    <p>${item.description}</p>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+function openLightbox(i) {
+    currentIndex = i;
+    const item = galleryItems[i];
+
+    const lb = document.getElementById("lightbox");
+    const content = document.getElementById("lightboxContent");
+
+    content.innerHTML = `
+        <img src="${item.url}" alt="">
+        <div class="lightbox-info">
+            <h3>${item.title}</h3>
+            <p>${item.description}</p>
+        </div>
+    `;
+
+    lb.classList.add("active");
+}
+
+function closeLightbox() {
+    document.getElementById("lightbox").classList.remove("active");
+}
+
+function navigate(dir) {
+    if (dir === "next") {
+        currentIndex = (currentIndex + 1) % galleryItems.length;
+    } else {
+        currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+    }
+    openLightbox(currentIndex);
+}
+
+function setupEvents() {
+    document.querySelectorAll(".gallery-card").forEach(card => {
+        card.addEventListener("click", e => {
+            const i = parseInt(e.currentTarget.dataset.index);
+            openLightbox(i);
+        });
+    });
+
+    document.getElementById("closeLightbox").onclick = closeLightbox;
+    document.getElementById("lightboxPrev").onclick = () => navigate("prev");
+    document.getElementById("lightboxNext").onclick = () => navigate("next");
+}
+
+initGallery();
+
+
+
+
+
+
+
+
+
+
+
+
+
         // Image data - Replace with your own images
         const images = [
             {
                 id: 1,
-                url: 'https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=1600&h=900&fit=crop',
-                title: 'Modern Architecture',
-                description: 'Contemporary building design with clean lines',
+                url: 'https://res.cloudinary.com/dxwfpc5fu/image/upload/v1763514422/zer-web_pblovz.png',
+                title: 'Zer Utilities',
+                description: 'Sitio web de utilidades personales',
             },
             {
                 id: 2,
-                url: 'https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=1600&h=900&fit=crop',
-                title: 'Urban Landscape',
-                description: 'Vibrant cityscape at golden hour',
+                url: 'https://res.cloudinary.com/dxwfpc5fu/image/upload/v1763514422/cjbo-web_qozmhe.png',
+                title: 'CJBO Redes',
+                description: 'Centro administrativo de infraestructura de redes para un centro educativo',
             },
             {
                 id: 3,
-                url: 'https://images.unsplash.com/photo-1618172193622-ae2d025f4032?w=1600&h=900&fit=crop',
-                title: 'Nature & Design',
-                description: 'Where architecture meets natural beauty',
-            },
-            {
-                id: 4,
-                url: 'https://images.unsplash.com/photo-1618556450991-2f1af64e8191?w=1600&h=900&fit=crop',
-                title: 'Minimalist Spaces',
-                description: 'Clean and modern interior design',
-            },
-            {
-                id: 5,
-                url: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1600&h=900&fit=crop',
-                title: 'Creative Workspace',
-                description: 'Inspiring environments for productivity',
-            },
+                url: 'https://res.cloudinary.com/dxwfpc5fu/image/upload/v1763514597/presim-web_rwmubi.png',
+                title: 'Presim',
+                description: 'Presentación escolar interactiva',
+            }
         ];
 
         let activeIndex = 0;
@@ -271,3 +406,7 @@ btnCloseMenuAcc.addEventListener('click', () => {
 
         // Initialize on page load
         init();
+
+
+
+        
