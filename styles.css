@@ -194,6 +194,15 @@ header {
         border: 2px solid #000000c5;
         background: linear-gradient(45deg, var(--primary) 0%, red 90%);
         color: var(--white);
+        opacity: 1;
+    }
+
+    @media screen and (min-width: 700px) {
+
+        #pro2 {
+            display: none;
+        }
+        
     }
 
     #home {
