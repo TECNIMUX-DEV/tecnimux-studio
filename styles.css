@@ -659,6 +659,10 @@ header {
   position: relative;      /* necesario para el tooltip */
   cursor: pointer;
   transition: 0.2s;
+
+  & a {
+    color: #000;
+  }
 }
 
 /* Tooltip */
