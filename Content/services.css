@@ -2,6 +2,7 @@
     --primary: #ff519f;
     --black: #000;
     --white: #fff;
+    --gray: #242424;
 }
 
 html {
@@ -15,10 +16,13 @@ html {
 }
 
 body {
+    position: relative;
+    max-width: 2000px;
     background-color: var(--white);
     color: var(--black);
     font-family: Arial, sans-serif;
     margin: 0 auto;
+
 }
 
 header {
@@ -35,6 +39,48 @@ header {
     }
 }
 
+#btn-back {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    margin-bottom: 12px;
+    padding: .5rem 1.5rem .5rem 1rem;
+    background-color: transparent;
+    color: var(--gray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid var(--gray);
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 10;
+    opacity: .4;
+
+    & svg {
+        height: auto;
+        width: 15px;
+        margin-right: 7px;
+        stroke: var(--gray);
+        fill: var(--gray);
+    }
+
+    & a {
+        text-decoration: none;
+        color: var(--white);
+    }
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+
+    #btn-back {
+        display: none;
+    }
+}
 
 .section {
     min-height: 100vh;
@@ -67,9 +113,39 @@ header {
 
 
 
+
+
         /* Hero Section */
+        video {
+            z-index: -1;
+            position: absolute;
+            height: 100vh;
+            width: 100%;
+            opacity: .5;
+            object-fit: cover;
+        }
+
+        .capa {
+            z-index: 1;
+            position: absolute;
+            height: 100vh;
+            width: 100%;
+            background: linear-gradient(135deg, #ff0000 0%, var(--primary) 100%);
+            backdrop-filter:  blur(10px);
+            opacity: .5;
+        }
+
         .hero {
-            position: relative;
+            z-index: 100;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
             background: linear-gradient(135deg, #ff0000 0%, var(--primary) 100%);
             color: white;
             padding: 4rem 2rem;
@@ -79,10 +155,20 @@ header {
 
         .hero::before {
             content: '';
+            z-index: -1;
             position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             inset: 0;
-            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
-            opacity: 0.5;
+            background: url(/Videos/apple-macbook-pro-16-2021-medium.png);
+            background-size: cover;
+            height: 100vh;
+            width: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0 auto;
+            opacity: .3;
         }
 
         .hero-content {
@@ -93,13 +179,14 @@ header {
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 4.5rem;
             font-weight: 800;
             margin-bottom: 1rem;
             background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            text-shadow: 0 0 25px rgba(0, 0, 0, 0.274);
             animation: fadeInUp 0.8s ease;
         }
 
@@ -107,8 +194,45 @@ header {
             font-size: 1.25rem;
             opacity: 0.9;
             line-height: 1.6;
+            text-shadow: 0 0 25px rgba(0, 0, 0, 0.274);
             animation: fadeInUp 0.8s ease 0.2s both;
         }
+
+        .hidden {
+            z-index: -1;
+            position: absolute;
+            transition: all .5s ease;
+            padding: .2rem 0;
+            animation: op .5s linear forwards;
+        }
+
+        #hero-title.fh1 {
+            font-size: 2rem;
+            padding-top: .3rem;
+            transition: all .7s linear;
+        }
+
+        #hero-descrip.fp {
+            font-size: .8rem;
+            display: none;
+                        transition: all 1.5s linear;
+        }
+        .hero.hidden {
+            /* transform: translateY(-100%); */
+            transition: all 0.5s linear;
+            /* margin-top: -5rem; */
+        }
+
+        .ct {
+            transform: translateY(250px);
+            transition: all .5s linear;
+        }
+
+        .cp {
+            transform: translateY(25px);
+        }
+        
+
 
         @keyframes fadeInUp {
             from {
@@ -121,11 +245,37 @@ header {
             }
         }
 
+        @keyframes fadeInUp2 {
+            from {
+                opacity: 0;
+                transform: translateY(0);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(-1000px);
+            }
+        }
+
+                @keyframes op {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+
         /* Container */
         .container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 4rem 2rem;
+
+            & h2 {
+                text-align: start;
+                margin-bottom: 1rem;
+                padding: 2rem 1rem;
+            }
         }
 
         /* Services Grid */
@@ -159,6 +309,11 @@ header {
         .service-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .service-card:hover .service-select {
+            background: linear-gradient(135deg, #ff002b 0%, var(--primary) 100%);
+            color: #ffffff;
         }
 
         .service-card:hover::before {
@@ -245,7 +400,19 @@ header {
         }
 
         .service-price {
-            display: inline-block;
+            display: inline-flex;
+            padding: 0.75rem 1.5rem;
+            background: transparent;
+            color: #0f172a;
+            font-weight: 600;
+            font-size: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-select {
+            display: flex;
+            width: fit-content;
             padding: 0.75rem 1.5rem;
             border-radius: 0.75rem;
             background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
@@ -286,7 +453,7 @@ header {
             display: inline-block;
             padding: 1rem 2.5rem;
             background: white;
-            color: #6366f1;
+            color: var(--black);
             border-radius: 0.75rem;
             font-weight: 600;
             font-size: 1.125rem;
@@ -320,6 +487,7 @@ header {
         }
 
         .modal-content {
+            height: 100%;
             background: white;
             border-radius: 1.5rem;
             max-width: 600px;
@@ -327,6 +495,8 @@ header {
             padding: 2.5rem;
             position: relative;
             animation: slideUp 0.4s ease;
+            padding: 1rem 3rem;
+            overflow: auto;
         }
 
         @keyframes slideUp {
@@ -465,7 +635,17 @@ header {
 
         /* Responsive */
         @media (max-width: 768px) {
+            
+            .hero::before {
+                content: "";
+                background: none;
+            }
+
             .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            #hero-title {
                 font-size: 2.5rem;
             }
 
@@ -495,7 +675,6 @@ header {
             }
 
             .modal-content {
-                padding: 28rem 2rem 2rem 2rem;
-                margin: 1rem;
+                padding: 2rem 1rem;
             }
         }

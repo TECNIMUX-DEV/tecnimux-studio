@@ -16,49 +16,28 @@
                     'Visualización en producción'
                 ],
                 price: 'Desde $250.000',
-                details: {
-                    overview: 'Our brand identity service creates a cohesive visual language that represents your company\'s values, personality, and vision. We conduct thorough research to understand your market position and develop designs that resonate with your target audience.',
-                    deliverables: [
-                        'Primary and secondary logo variations',
-                        'Comprehensive brand style guide',
-                        'Color system with HEX/RGB/CMYK values',
-                        'Typography hierarchy and pairing',
-                        'Print-ready business collateral',
-                        'Digital asset templates',
-                        'Brand presentation deck'
-                    ],
-                    timeline: '4-6 weeks',
-                    process: 'Discovery → Strategy → Concept Development → Refinement → Final Delivery'
-                }
+                select: 'Iniciar Chat',
+                link: "https://wa.me/573008380370?text=Hola%20%F0%9F%98%8E%2C%20Quiero%20saber%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Identidad%20de%20Marca",
+
             },
             {
                 id: 2,
                 category: 'web',
                 icon: '💻',
-                title: 'Paginas Web',
+                title: 'Páginas Web',
                 description: 'Diseñamos páginas web modernas y responsivas que atraen a los visitantes.',
                 features: [
                     'Diseño personalizado de páginas web',
                     'Compatibilidad con diferentes dispositivos',
                     'Optimización de la experiencia del usuario',
+                    'Dominio dedicado', 
+                    'Hosting por 1 Año',
                     'Todo es funcional',
-                    'Estructura SEO-friendly'
+                    'Estructura SEO-friendly',
                 ],
                 price: 'Desde $300.000',
-                details: {
-                    overview: 'Transform your online presence with custom web designs that combine aesthetics with functionality. We create responsive, user-centered designs that work seamlessly across all devices and drive conversions.',
-                    deliverables: [
-                        'Wireframes and information architecture',
-                        'High-fidelity mockups (desktop, tablet, mobile)',
-                        'Interactive clickable prototypes',
-                        'Design system and component library',
-                        'Style guide with specifications',
-                        'Developer handoff documentation',
-                        'Image and icon assets'
-                    ],
-                    timeline: '6-8 weeks',
-                    process: 'Research → Wireframing → Visual Design → Prototyping → Testing → Handoff'
-                }
+                select: 'Iniciar Chat',
+                link: 'https://wa.me/573008380370?text=Hola%20%F0%9F%92%A5%2C%20Quiero%20saber%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Paginas%20Web.',
             },
             // {
             //     id: 3,
@@ -74,21 +53,7 @@
             //         'Interaction design'
             //     ],
             //     price: 'From $4,000',
-            //     details: {
-            //         overview: 'Design exceptional user experiences through research-driven insights and iterative design processes. We create interfaces that are not only beautiful but also intuitive and accessible.',
-            //         deliverables: [
-            //             'User research findings and personas',
-            //             'User journey maps and flows',
-            //             'Low and high-fidelity wireframes',
-            //             'Interactive prototypes',
-            //             'Visual interface designs',
-            //             'Design system documentation',
-            //             'Usability testing reports',
-            //             'Developer specifications'
-            //         ],
-            //         timeline: '5-7 weeks',
-            //         process: 'Research → Ideation → Wireframing → Design → Prototyping → Testing → Iteration'
-            //     }
+            //     select: 'Iniciar Chat',
             // },
             {
                 id: 4,
@@ -100,11 +65,9 @@
                     'Edición de fotos',
                     'Creación de ilustraciones',
                     'Diseño de presentaciones',
-                    'Posters',
-                    'Stikers',
+                    'Stikers, Posters y Banners',
                     'Materiales para impresión',
                     'Implementación de redes sociales',
-                    'Banners',
                     'Videos',
                     'Fondos de pantalla personalizados',
                     'Logotipo semi-profesional',
@@ -112,20 +75,8 @@
                     
                 ],
                 price: 'Desde $15.000',
-                details: {
-                    overview: 'Elevate your marketing efforts with compelling graphic designs that tell your story and engage your audience. From social media posts to print materials, we create visuals that make an impact.',
-                    deliverables: [
-                        'Custom graphic designs',
-                        'Print-ready files (CMYK)',
-                        'Web-optimized graphics (RGB)',
-                        'Vector source files',
-                        'Multiple size variations',
-                        'Template files for future use',
-                        'Usage guidelines'
-                    ],
-                    timeline: '2-4 weeks',
-                    process: 'Brief → Concept → Design → Revisions → Final Files'
-                }
+                select: 'Iniciar Chat',
+                link: 'https://wa.me/573008380370?text=Hola%20%F0%9F%8E%AF%2C%20Quiero%20saber%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Dise%C3%B1o%20Especifico.',
             },
             {
                 id: 5,
@@ -139,24 +90,26 @@
                     'Targeteria y volantes',
                     'Publicidad en redes sociales',
                     'Carteles informativos',
-                    'Edición de videos de publicidad'
+                    'Videos publicitarios'
                 ],
                 price: 'Desde $30.000',
-                details: {
-                    overview: 'Capture attention and explain complex concepts through the power of motion design. We create animations that enhance your brand story and engage audiences across all platforms.',
-                    deliverables: [
-                        'Animated logo sequences',
-                        'Motion graphics templates',
-                        'Video content (various formats)',
-                        'Social media animation loops',
-                        'UI animation specifications',
-                        'Storyboards and style frames',
-                        'Editable project files',
-                        'Multiple export formats'
-                    ],
-                    timeline: '3-5 weeks',
-                    process: 'Concept → Storyboarding → Style Frames → Animation → Sound → Final Render'
-                }
+                select: 'Iniciar Chat',
+                link: 'https://wa.me/573008380370?text=Hola%20%F0%9F%93%A3%2C%20Quiero%20saber%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Publicidad.',
+                // details: {
+                //     overview: 'Capture attention and explain complex concepts through the power of motion design. We create animations that enhance your brand story and engage audiences across all platforms.',
+                //     deliverables: [
+                //         'Animated logo sequences',
+                //         'Motion graphics templates',
+                //         'Video content (various formats)',
+                //         'Social media animation loops',
+                //         'UI animation specifications',
+                //         'Storyboards and style frames',
+                //         'Editable project files',
+                //         'Multiple export formats'
+                //     ],
+                //     timeline: '3-5 weeks',
+                //     process: 'Concept → Storyboarding → Style Frames → Animation → Sound → Final Render'
+                // }
             }
         ];
 
@@ -172,69 +125,143 @@
                         ${service.features.map(feature => `<li>${feature}</li>`).join('')}
                     </ul>
                     <div class="service-price">${service.price}</div>
+                    <div class="service-select">${service.select}</div>
                 </div>
             `).join('');
         }
 
-        // Open modal with service details
+
         function openModal(serviceId) {
-            const service = services.find(s => s.id === serviceId);
-            if (!service) return;
-
-            const modal = document.getElementById('modal');
-            const modalContent = document.getElementById('modalContent');
-
-            modalContent.innerHTML = `
-                <button class="modal-close" onclick="closeModal()">×</button>
-                <div class="modal-header">
-                    <div class="modal-icon ${service.category}">${service.icon}</div>
-                    <h3 class="modal-title">${service.title}</h3>
-                    <p class="modal-subtitle">${service.price}</p>
-                </div>
-                <div class="modal-body">
-                    <p>${service.details.overview}</p>
-                </div>
-                <div class="modal-details">
-                    <h4>What's Included</h4>
-                    <ul>
-                        ${service.details.deliverables.map(item => `<li>${item}</li>`).join('')}
-                    </ul>
-                </div>
-                <div class="modal-details">
-                    <h4>Timeline & Process</h4>
-                    <p style="margin-bottom: 0.5rem;"><strong>Timeline:</strong> ${service.details.timeline}</p>
-                    <p><strong>Process:</strong> ${service.details.process}</p>
-                </div>
-                <div class="modal-footer">
-                    <button class="modal-button secondary" onclick="closeModal()">Close</button>
-                    <button class="modal-button primary" onclick="alert('Contact form would open here')">Get Started</button>
-                </div>
-            `;
-
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
+            window.location.href = services.find(s => s.id === serviceId).link;
         }
 
-        // Close modal
-        function closeModal() {
-            const modal = document.getElementById('modal');
-            modal.classList.remove('active');
-            document.body.style.overflow = '';
-        }
 
-        // Close modal on outside click
-        document.getElementById('modal').addEventListener('click', function(e) {
-            if (e.target.id === 'modal') {
-                closeModal();
-            }
-        });
 
-        // Close modal on Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeModal();
-            }
-        });
+        // // Open modal with service details
+        // function openModal(serviceId) {
+        //     const service = services.find(s => s.id === serviceId);
+        //     if (!service) return;
+
+        //     const modal = document.getElementById('modal');
+        //     const modalContent = document.getElementById('modalContent');
+
+        //     modalContent.innerHTML = `
+        //         <button class="modal-close" onclick="closeModal()">×</button>
+        //         <div class="modal-header">
+        //             <div class="modal-icon ${service.category}">${service.icon}</div>
+        //             <h3 class="modal-title">${service.title}</h3>
+        //             <p class="modal-subtitle">${service.price}</p>
+        //         </div>
+        //         <div class="modal-body">
+        //             <p>${service.details.overview}</p>
+        //         </div>
+        //         <div class="modal-details">
+        //             <h4>What's Included</h4>
+        //             <ul>
+        //                 ${service.details.deliverables.map(item => `<li>${item}</li>`).join('')}
+        //             </ul>
+        //         </div>
+        //         <div class="modal-details">
+        //             <h4>Timeline & Process</h4>
+        //             <p style="margin-bottom: 0.5rem;"><strong>Timeline:</strong> ${service.details.timeline}</p>
+        //             <p><strong>Process:</strong> ${service.details.process}</p>
+        //         </div>
+        //         <div class="modal-footer">
+        //             <button class="modal-button secondary" onclick="closeModal()">Cerrar</button>
+        //             <button class="modal-button primary" onclick="alert('Contact form would open here')">Iniciar</button>
+        //         </div>
+        //     `;
+
+        //     modal.classList.add('active');
+        //     document.body.style.overflow = 'hidden';
+        // }
+
+        // // Close modal
+        // function closeModal() {
+        //     const modal = document.getElementById('modal');
+        //     modal.classList.remove('active');
+        //     document.body.style.overflow = '';
+        // }
+
+        // // Close modal on outside click
+        // document.getElementById('modal').addEventListener('click', function(e) {
+        //     if (e.target.id === 'modal') {
+        //         closeModal();
+        //     }
+        // });
+
+        // // Close modal on Escape key
+        // document.addEventListener('keydown', function(e) {
+        //     if (e.key === 'Escape') {
+        //         closeModal();
+        //     }
+        // });
 
         // Initialize
         renderServices();
+
+
+        const hero = document.getElementById('hero');
+        const heroTitle = document.getElementById('hero-title');
+        const heroDescrip = document.getElementById('hero-descrip');
+        const container = document.querySelector('.container');
+        const capa = document.querySelector('.capa');
+
+        //  let scrollY = 0;
+
+        // function hiddenHero() {
+        //     if (window.scrollY > 100) {
+        //         scrollY = window.scrollY;
+        //         hero.classList.add('hidden'); 
+        //         console.log('hola');
+        //     } else {
+        //         hero.classList.remove('hidden');
+        //         window.scrollTo(0, scrollY);
+        //     }
+        // }
+
+        // window.addEventListener('scroll', hiddenHero);
+
+        // window.addEventListener('scroll', () => {
+        //     if (window.scrollY > 50) {
+        //     hero.classList.add('hidden');
+        //     heroTitle.classList.add('fh1');
+
+        //     container.classList.add('ct');
+
+        //     } else {
+        //         hero.classList.remove('hidden');
+        //         heroTitle.classList.remove('fh1');  
+        //         heroDescrip.classList.add('fp');
+        //     }
+        // })
+
+    function hiddenHero() {
+
+        setTimeout(() => {
+            hero.classList.add('hidden');
+            heroTitle.classList.add('fh1');
+            heroDescrip.classList.add('fp');
+            capa.style.display = 'none';
+            overflow();
+
+        }, 2000);
+        overflowNone();
+        }
+
+
+        function overflow() {
+            document.body.style.overflow = 'auto';
+        }
+        function overflowNone() {
+            document.body.style.overflow = 'hidden';
+        }
+
+
+        hiddenHero();
+
+
+        hero.addEventListener('click', () => {
+            hero.style.display = 'none';
+            overflow();
+        })
