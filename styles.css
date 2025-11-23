@@ -315,7 +315,13 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 0 1rem;
     position: relative;
+
+    & span {
+        position: relative;
+        top: -2px;
+    }
 }
 
 #burger {
@@ -554,11 +560,12 @@ header {
 }
 
 .container-hecho {
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    max-width: 70%;
+      position: relative;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      max-width: 90%;
+      width: 100%;
     /* padding: 1rem 2rem; */
 
     & ul {
@@ -637,7 +644,7 @@ header {
 @media screen and (max-width: 1000px ) {
 
     .logos-list {
-        animation: scrollA 35s linear infinite;
+        animation: scroll-mobile 20s linear infinite;
     }
 
     .nav-more {
@@ -645,20 +652,32 @@ header {
         gap: 10px;
     }
 }
+    /* Animación infinita para móvil */
+    @keyframes scroll-mobile {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
 
 /* Cada ítem circular */
 .logo-item {
-  width: 70px;
-  height: 70px;
-  border: 2px solid var(--primary);
-  border-radius: 50%;
-  flex-shrink: 0;          /* evita cortes en scroll */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;      /* necesario para el tooltip */
-  cursor: pointer;
-  transition: 0.2s;
+    width: 70px;
+    height: 70px;
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: white;
+    color: var(--black);
 
   & a {
     color: #000;
@@ -711,6 +730,43 @@ header {
   }
 }
 
+
+    /* Responsive */
+    @media screen and (max-width: 1000px) {
+      .container-hecho {
+        max-width: 100%;
+      }
+      
+      .logos-list {
+        gap: 20px;
+      }
+    }
+
+    @media screen and (max-width: 640px) {
+      .logo-item {
+        width: 60px;
+        height: 60px;
+      }
+      
+      .logos-list {
+        gap: 15px;
+        padding: 0 15px;
+        animation: scroll-mobile 20s linear infinite;
+        width: max-content;
+      }
+      
+      .logos-list.paused {
+        animation-play-state: paused;
+      }
+      
+      .logo-item::after {
+        font-size: 11px;
+      }
+
+      .logos-nav {
+        overflow-x: auto;
+      }
+    }
 
 
 .hecho {
@@ -795,7 +851,7 @@ header {
     position: relative;
     min-height: 80vh;
     max-width: 63%;
-    margin: 3rem auto;
+    margin: 0rem auto;
     padding: 4rem 0;
 
     & h2 {
@@ -1811,3 +1867,6 @@ footer {
             }
         }
   
+
+/* Category slider */
+

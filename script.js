@@ -409,4 +409,7 @@ initGallery();
 
 
 
+// Category slider
+
+
         
