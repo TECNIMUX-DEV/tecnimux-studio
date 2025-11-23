@@ -1590,6 +1590,7 @@ footer {
         .container-work {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 4rem 2rem;
         }
 
         .title-work {
@@ -1659,14 +1660,14 @@ footer {
             position: relative;
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             border-radius: 1rem;
-            overflow: hidden;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
         }
 
         .carousel-inner {
             position: relative;
             width: 100%;
-            aspect-ratio: 16 / 9;
+            aspect-ratio:  16 / 9;
         }
 
         .carousel-item {
